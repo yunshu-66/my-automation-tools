@@ -1,6 +1,14 @@
+# greet 函数：用于向用户打招呼，打印问候语
+def greet():
+    print("你好！欢迎使用本程序。")
+
+# add 函数：接收两个数字，返回它们的和
+def add(a, b):
+    return a + b
+
 name='yunshu'
 age='21'
-print("我叫",name,"今年",age,"岁")
+print("我的名字是",name,"今年",age,"岁")
 score=50
 if score>=60:
     print("及格")
