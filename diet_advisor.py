@@ -41,15 +41,22 @@ def get_advice(category):
 
 
 def main():
-    """主函数：获取输入、计算 BMI、分类并输出建议"""
-    height_cm, weight_kg = get_user_input()
-    bmi = calculate_bmi(weight_kg, height_cm)
-    category = classify_bmi(bmi)
-    advice = get_advice(category)
+    """主函数：循环获取输入、计算 BMI、分类并输出建议，直到用户选择退出"""
+    while True:
+        height_cm, weight_kg = get_user_input()
+        bmi = calculate_bmi(weight_kg, height_cm)
+        category = classify_bmi(bmi)
+        advice = get_advice(category)
 
-    print(f"\n您的 BMI 值为：{bmi:.1f}")
-    print(f"分类：{category}")
-    print(f"建议：{advice}")
+        print(f"\n您的 BMI 值为：{bmi:.1f}")
+        print(f"分类：{category}")
+        print(f"建议：{advice}")
+
+        # 询问是否继续
+        choice = input("\n是否继续？(y/n)：").strip().lower()
+        if choice == "n":
+            print("程序结束，再见！")
+            break
 
 
 if __name__ == "__main__":
